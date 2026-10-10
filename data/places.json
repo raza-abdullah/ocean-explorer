@@ -1,0 +1,6 @@
+[
+ {"name":"Challenger Deep","lat":11.37,"lon":142.59,"place":"Pacific Ocean · Mariana Trench","fact":"The deepest known part of the ocean, roughly 10,900 metres below sea level."},
+ {"name":"Great Barrier Reef","lat":-18.29,"lon":147.70,"place":"Coral Sea · Off Australia","fact":"The world's largest coral reef system."},
+ {"name":"Mid-Atlantic Ridge","lat":0.0,"lon":-25.0,"place":"Atlantic Ocean","fact":"Part of a giant mountain system where tectonic plates move apart."},
+ {"name":"Denmark Strait","lat":66.0,"lon":-27.0,"place":"Between Greenland and Iceland","fact":"Dense water descends beneath lighter water, forming a giant underwater cataract."}
+]

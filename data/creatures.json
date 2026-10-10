@@ -1,0 +1,8 @@
+[
+ {"name":"Octopus","zone":"Sunlight & Twilight","emoji":"🐙","fact":"An octopus has three hearts, blue blood, and eight clever arms.","kind":"reef"},
+ {"name":"Blue whale","zone":"Sunlight","emoji":"🐋","fact":"The blue whale is the largest animal known to have lived on Earth.","kind":"whale"},
+ {"name":"Sea turtle","zone":"Sunlight","emoji":"🐢","fact":"Sea turtles navigate vast oceans and many return to nesting beaches.","kind":"turtle"},
+ {"name":"Anglerfish","zone":"Midnight","emoji":"🐟","fact":"Some deep-sea anglerfish use a glowing lure to attract prey.","kind":"angler"},
+ {"name":"Jellyfish","zone":"Many depths","emoji":"🪼","fact":"Some jellyfish glow through bioluminescence.","kind":"jelly"},
+ {"name":"Clownfish","zone":"Sunlight","emoji":"🐠","fact":"Clownfish shelter among sea anemone tentacles.","kind":"clown"}
+]
