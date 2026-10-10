@@ -21,3 +21,17 @@ function renderQuiz(){if(qi>=questions.length){$('quizCount').textContent='MISSI
 // Offline synthesized ambience: no audio files, network access, or permissions needed.
 let audioContext=null,noiseSource=null,filter=null,gain=null,soundOn=false;
 $('soundBtn').addEventListener('click',()=>{try{if(!soundOn){const AC=window.AudioContext||window.webkitAudioContext;if(!AC){$('soundBtn').textContent='Audio unavailable';return}audioContext=new AC();const len=audioContext.sampleRate*2,buffer=audioContext.createBuffer(1,len,audioContext.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<len;i++)data[i]=Math.random()*2-1;noiseSource=audioContext.createBufferSource();noiseSource.buffer=buffer;noiseSource.loop=true;filter=audioContext.createBiquadFilter();filter.type='lowpass';filter.frequency.value=220;gain=audioContext.createGain();gain.gain.value=.055;noiseSource.connect(filter).connect(gain).connect(audioContext.destination);noiseSource.start();soundOn=true}else{noiseSource.stop();audioContext.close();soundOn=false}$('soundBtn').textContent=soundOn?'♫ Sound on':'♫ Sound off';$('soundBtn').setAttribute('aria-pressed',String(soundOn))}catch(e){$('soundBtn').textContent='Sound unavailable'}});
+
+// Latitude lab: deliberately runs entirely offline without a mapping API.
+const latSlider=$('latitudeSlider');
+function renderLatitude(){
+  if(!latSlider)return;
+  const lat=Number(latSlider.value), abs=Math.abs(lat);
+  $('latitudeValue').textContent=lat===0?'0° Equator':`${abs}° ${lat>0?'N':'S'}`;
+  const y=188-(lat/90)*150;
+  $('latitudeLine').setAttribute('y1',String(y));$('latitudeLine').setAttribute('y2',String(y));
+  $('latitudeDot').setAttribute('cy',String(y));
+  const b=abs<23.5?['TROPICAL OCEAN','Near the Equator','Low latitudes receive relatively direct sunlight throughout the year. Tropical waters often support coral reefs where other conditions are suitable.','Look for: reef fish, sea turtles, coral ecosystems.']:abs<66.5?['TEMPERATE OCEAN','Between tropics and poles','Sunlight and seasons vary more strongly. Cool-water habitats can include kelp forests and productive fisheries.','Look for: kelp forests, seals, migrating whales.']:['POLAR OCEAN','Close to a pole','Polar oceans experience dramatic seasonal changes in daylight. Sea ice and cold-water food webs shape life here.','Look for: plankton blooms, seals and polar seabirds.'];
+  $('latitudeBand').textContent=b[0];$('latitudeHeading').textContent=b[1];$('latitudeFact').textContent=b[2];$('latitudeAnimal').textContent=b[3];
+}
+if(latSlider){latSlider.addEventListener('input',renderLatitude);renderLatitude()}

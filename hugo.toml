@@ -1,5 +1,5 @@
 title = 'The Secret World Under the Ocean'
-languageCode = 'en-us'
+locale = "en-US"
 relativeURLs = true
 uglyURLs = true
 disableKinds = ['taxonomy','term','RSS','sitemap']

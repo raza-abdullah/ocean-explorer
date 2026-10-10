@@ -2,114 +2,162 @@
 
 **Dive deep. Discover wonders. Explore our Blue Planet. 🐠**
 
-OceanQuest is an interactive educational website that takes young explorers on an exciting journey beneath the ocean's surface.
+[🌐 Explore the live website](https://raza-abdullah.github.io/ocean-explorer/) · [📂 Source code](https://github.com/raza-abdullah/ocean-explorer) · [⚙️ GitHub Actions](https://github.com/raza-abdullah/ocean-explorer/actions)
 
-Discover fascinating marine creatures, explore underwater mountains and mysterious trenches, learn about latitude and longitude, and understand why protecting our oceans matters.
+OceanQuest is an interactive, geography-focused ocean adventure created for a school website-building competition. Explore marine life, ocean ecosystems, the hidden landscape of the seafloor, latitude and longitude, and the importance of protecting our oceans.
 
-Built as a **school website-building competition project**, OceanQuest demonstrates how creativity, curiosity, and AI-assisted development can come together to create an engaging learning experience.
+The project is also a story about **learning to build with AI**: asking questions, comparing technologies, improving ideas, troubleshooting problems, and testing the results.
 
-## 🌍 What Can You Explore?
+> **School presentation:** The finished site is designed to work without Wi-Fi. The website is built in advance and can be carried to school on a USB drive.
 
-- 🌊 **Our Blue Planet** — Discover Earth's oceans, continents, and fascinating geographical facts.
-- 🧭 **Ocean Explorer's GPS** — Learn latitude, longitude, hemispheres, and the coordinates of famous underwater locations.
-- 🐋 **Marine Life** — Meet whales, sharks, octopuses, jellyfish, sea turtles, and other amazing ocean creatures.
-- 🤿 **Dive Into the Deep** — Explore five ocean depth zones, from the sunlit surface to the mysterious Hadal Zone.
-- 🏔️ **Ocean vs Land** — Compare Mount Everest with the deepest ocean trenches and discover underwater mountains and volcanoes.
-- 🪸 **Ocean Ecosystems** — Learn about coral reefs, mangroves, kelp forests, and the importance of marine biodiversity.
-- ♻️ **Save Our Oceans** — Understand ocean pollution, climate change, and how we can protect marine ecosystems.
-- 🏆 **Ocean Explorer Challenge** — Test your knowledge with an interactive geography and marine-life quiz.
+## 🧭 Explore OceanQuest
 
-## ✨ Key Features
+| Adventure | What you'll discover |
+| --- | --- |
+| 🌍 Our Blue Planet | Oceans, continents, hemispheres, and Earth's watery surface |
+| 🧭 Ocean Explorer's GPS | Latitude, longitude, and real underwater locations |
+| 🏔️ Ocean vs. Land | Everest versus Challenger Deep, seamounts, and ocean trenches |
+| 🤿 Dive Into the Deep | The Sunlight, Twilight, Midnight, Abyssal, and Hadal zones |
+| 🐙 Meet the Marine Life | Creatures, habitats, and surprising adaptations |
+| 🪸 Ocean Ecosystems | Coral reefs, kelp forests, and deep-ocean communities |
+| ♻️ Become an Ocean Guardian | Why the oceans matter and how we can protect them |
+| 🏆 Ocean Explorer Challenge | Interactive questions and learning activities |
+| 🤖 My AI Build Journey | How the idea became a working website with ChatGPT's help |
 
-- Interactive, image-rich educational experience
-- Ocean-inspired visuals and animations
-- Fascinating geographical facts and comparisons
-- Interactive ocean depth exploration
-- Marine-life discovery cards
-- Latitude and longitude learning activities
-- Educational quizzes and challenges
-- Responsive design for desktops and tablets
-- **Fully offline — no internet required for the finished website**
+## ✨ Highlights
 
-## 🛠️ Built With
+- Ocean-inspired visuals, local illustrations, and interactive learning activities.
+- Geography and science explained with comparisons, questions, and discoveries.
+- Responsive layout for desktop and tablet browsers.
+- **No online services required to view the built website** when its local assets and links are used.
+- Hugo-generated static HTML, CSS, and JavaScript, with no runtime database.
+- A behind-the-scenes AI journey that documents real design decisions and debugging.
 
-| Technology | Purpose |
-|---|---|
-| Hugo | Static site generator |
-| Markdown | Educational content |
-| HTML5 | Website structure |
-| CSS3 | Styling, layouts, and animations |
-| JavaScript | Interactive activities and quizzes |
-| SVG | Illustrations and visual elements |
-| ChatGPT | AI-assisted brainstorming, development, and debugging |
+## 🛠️ Technology
 
-## 🚀 Run Locally
+| Technology | Role |
+| --- | --- |
+| [Hugo](https://gohugo.io/) | Static site generation |
+| Markdown and Hugo templates | Educational content and reusable layout |
+| HTML5 + CSS3 | Page structure, styling, and animations |
+| Vanilla JavaScript | Interactive activities and quizzes |
+| SVG and other local images | Ocean illustrations and visual content |
+| GitHub Actions | Automated build and GitHub Pages deployment |
+| ChatGPT | AI-assisted ideation, implementation, explanations, and debugging |
 
-### Prerequisites
+## 🚀 Develop locally
 
-Install [Hugo](https://gohugo.io/installation/).
+### Requirements
 
-On macOS:
+Install [Hugo](https://gohugo.io/installation/). On macOS with Homebrew:
 
 ```bash
 brew install hugo
+hugo version
 ```
 
-### Clone the repository
+Clone and run:
 
 ```bash
 git clone https://github.com/raza-abdullah/ocean-explorer.git
 cd ocean-explorer
-```
-
-### Start the development server
-
-```bash
 hugo server
 ```
 
-Open your browser at:
+Visit **http://localhost:1313/**. Hugo watches for edits and rebuilds the development site.
 
-**http://localhost:1313/**
-
-### Build the website
+### Build the static website
 
 ```bash
 hugo --cleanDestinationDir
 ```
 
-The generated static website will be available in the `public/` directory.
+The output is in **`public/`**. You can inspect it locally, then copy it to a USB drive. The Hugo development server is **not** required on the school computer.
 
-## 💾 Run Offline From a USB Drive
+## ⚙️ GitHub Actions: build, deploy, and download artifacts
 
-OceanQuest is designed to work without internet access.
+Every push to `main` triggers the [GitHub Actions workflow](https://github.com/raza-abdullah/ocean-explorer/actions), which builds the Hugo site and deploys it to GitHub Pages.
 
-1. Build the website using Hugo.
-2. Copy the contents of `public/` to a folder on your USB drive.
-3. Connect the USB drive to the school computer.
-4. Open `index.html` in a modern web browser.
-5. Start exploring!
+### How to find the build artifact
 
-**No web server, database, Node.js, or internet connection is required on the presentation computer.**
+1. Open the repository's **[Actions](https://github.com/raza-abdullah/ocean-explorer/actions)** tab.
+2. Select the latest successful **Deploy OceanQuest to GitHub Pages** run (look for the green check mark).
+3. Open the **build** job and expand **Upload website artifact** to confirm that the upload succeeded, as shown below.
+4. Return to the **workflow run Summary** page and scroll to **Artifacts**. Select **`github-pages`** to download it, if GitHub makes it available to your account and the artifact has not expired.
+5. The downloaded GitHub Pages artifact may contain an **`artifact.tar`** archive rather than a directly browsable website. Extract the archive before using its contents. If you want the simplest USB-ready output, use the **local Hugo build** described below instead.
 
-## 🤖 Built With Help From AI
+![Successful GitHub Actions build with the Upload website artifact step expanded](docs/images/github-actions-artifact-upload.png)
 
-OceanQuest is also an experiment in learning how to build websites with artificial intelligence.
+*Screenshot: a successful `build` job and artifact upload. The download link is found on the workflow run's Summary page under Artifacts, not inside this log.*
 
-ChatGPT is used as a creative and technical assistant to help with:
+**Note:** GitHub Pages deployment artifacts are designed for the deployment workflow. They can expire, and artifact download permissions depend on GitHub access. A local `hugo` build is the recommended way to prepare the school USB drive.
 
-- Brainstorming educational ideas and interactive features
-- Planning the website structure and design
-- Generating and improving HTML, CSS, and JavaScript
-- Creating interactive learning experiences
-- Explaining programming concepts in simple language
-- Identifying bugs and suggesting improvements
-- Making the website more engaging and accessible
+## 💾 Prepare the school USB drive (recommended)
 
-**The goal is not just to build a website with AI, but to learn how to ask better questions, evaluate suggestions, experiment, and turn creative ideas into a working project.**
+1. On your development computer, run `hugo --cleanDestinationDir` in the repository root.
+2. Create a folder named `OceanQuest` on the USB drive.
+3. Copy **everything inside `public/`** into `OceanQuest/`, including HTML, CSS, JavaScript, and images.
+4. Disconnect the internet and open `OceanQuest/index.html` in Chrome or Edge.
+5. Test navigation, images, interactive activities, and the **My AI Build Journey** page before the presentation.
 
-## 🎯 Learning Objectives
+Example USB layout:
 
-Through OceanQuest, young explorers can learn:
+```text
+USB-DRIVE/
+└── OceanQuest/
+    ├── index.html
+    ├── ai-journey.html
+    ├── css/
+    ├── js/
+    └── images/
+```
 
-1. Why oceans cover approximately 71%
+The exact generated files may differ as the project evolves. **Copy the entire output, not only `index.html`.**
+
+> **Offline checklist:** Test from the actual USB drive with Wi-Fi turned off. Avoid external fonts, CDNs, remote images, online maps, and browser `fetch()` calls to local files. Successful GitHub Pages deployment alone does not prove `file://` compatibility.
+
+## 🤖 My AI Build Journey
+
+The project began with a question: *How can I build a school website that works without the internet?*
+
+We explored HTML, Markdown, and several static site generators. ChatGPT initially suggested Eleventy; after comparing it with Hugo and discussing the image-rich design, we chose **Hugo**. Then the ocean theme grew into an interactive geography adventure with depth zones, latitude and longitude, marine ecosystems, and quizzes.
+
+Along the way, AI helped us:
+
+1. **Explore options:** Compare website technologies and offline deployment approaches.
+2. **Shape the idea:** Turn an ocean theme into a geography and marine-science adventure.
+3. **Build features:** Generate and improve templates, CSS, and JavaScript.
+4. **Solve problems:** Investigate GitHub Pages setup issues and Hugo deprecation warnings.
+5. **Keep improving:** Add new educational experiences and reflect on what worked.
+
+**The lesson:** AI is a learning and problem-solving partner. The important skills are asking useful questions, checking suggestions, understanding changes, and testing the finished work.
+
+### 👋 Meet the Young Explorer
+
+**Abdullah Raza** · **Grade 6** · **New Middle East International School**
+
+OceanQuest combines a curiosity about our Blue Planet with the challenge of building a real website using AI assistance.
+
+*Privacy note: This repository is public. The student and parent/guardian should be comfortable with displaying the student's name and school online.*
+
+## 🎯 What visitors can learn
+
+- Why oceans cover about **71%** of Earth's surface.
+- How **latitude and longitude** identify places on Earth.
+- How underwater mountains, trenches, and ridges compare with landforms.
+- How ocean **light, temperature, and pressure** change with depth.
+- How marine creatures and ecosystems adapt to different environments.
+- Why protecting oceans matters for life on land as well as underwater.
+
+## 📚 Learn more
+
+Explore reliable ocean and geography resources:
+
+- [NOAA Ocean Service](https://oceanservice.noaa.gov/)
+- [NOAA Ocean Exploration](https://oceanexplorer.noaa.gov/)
+- [NASA Earth Observatory](https://earthobservatory.nasa.gov/)
+- [UNESCO Ocean](https://www.unesco.org/en/ocean)
+
+---
+
+**Explore the ocean. Discover its secrets. Protect its future. 🌊**
